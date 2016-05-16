@@ -10,7 +10,6 @@
 float luz = 0; //iniciar variável luz de referência
 
 void setup() {
-  Serial.begin(9600);
   pinMode(LED, OUTPUT); //definir pino 10 como saída
   digitalWrite(LED, LOW); //iniciar pino 10 com zero
   for (int i=0;i<100;i++){ //loop para calcular a luminosidade de referência
@@ -26,8 +25,6 @@ void loop() {
     luz_atual = luz_atual + analogRead(LDR); //ler porta analógica
     }
   luz_atual = luz_atual/100; //calcular média
-  Serial.print("A");
-  Serial.print(luz_atual);
   if (luz_atual<=luz){ //comparar se valor da luminosidade está ao menos 70% menor
     digitalWrite(LED, HIGH); //caso sim acender o LED
     }
